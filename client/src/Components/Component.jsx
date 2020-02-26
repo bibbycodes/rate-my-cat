@@ -6,23 +6,34 @@ class Template extends React.Component {
     super(props)
     this.state = {
       message : "this is a template component",
-      response : ""
+      urls : []
     }
   }
 
   handleRequest = async () => {
-    let response = await Axios.get('/home')
-    console.log(response)
-    this.setState({response : response.data.message})
+    let response = await Axios.get('/cats')
+    let data = response.data
+    let urls = []
+    for (let i = 0; i < data.length; i++ ) {
+      urls.push(data[i].url)
+      console.log(data[i].url)
+    }
+    this.setState({urls : urls})
+    console.log(this.state.urls)
   }
 
-  componentDidMount() {
-    this.handleRequest()
+  componentDidMount = async () => {
+    await this.handleRequest()
   }
 
   render () {
     return (
       <div>
+        {this.state.urls.map((url, index) => {
+          return (
+            <img key={index} src={url}></img>
+          )
+        })}
         <p>{this.state.message}</p>
         <p>{this.state.response}</p>
       </div>
