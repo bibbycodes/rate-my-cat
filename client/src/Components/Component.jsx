@@ -19,7 +19,6 @@ class Template extends React.Component {
       console.log(data[i].url)
     }
     this.setState({urls : urls})
-    console.log(this.state.urls)
   }
 
   componentDidMount = async () => {
@@ -34,8 +33,6 @@ class Template extends React.Component {
             <img key={index} src={url}></img>
           )
         })}
-        <p>{this.state.message}</p>
-        <p>{this.state.response}</p>
       </div>
 
     )

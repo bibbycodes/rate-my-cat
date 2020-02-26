@@ -21,7 +21,12 @@ app.get('/home', (req, res) => {
 
 app.get('/cats', async (req, res) => {
   let result = await axios.get(`${base_url}/images/search?api_key=${API_KEY}&size=full&limit=50`)
-  res.send(result.data)
+  res.json(result.data)
+})
+
+app.get('/cats/random', async (req, res) => {
+  let result = await axios.get(`${base_url}/images/search?api_key=${API_KEY}&size=full&limit=1`)
+  res.json(result.data)
 })
 
 app.listen(PORT, () => {
