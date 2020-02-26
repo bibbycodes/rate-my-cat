@@ -6,7 +6,8 @@ class RatingsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      url : ""
+      url : "",
+      rating: 0
     }
   }
 
@@ -19,7 +20,18 @@ class RatingsContainer extends Component {
 
   handleRating = (rating) => {
     // rating.preventDefault()
-    console.log(rating)
+    this.setState({rating})
+    console.log(this.state)
+  }
+
+  handleSubmit = async () => {
+    console.log(this.state.rating)
+    let rating = this.state.rating
+    let url = this.state.url
+    await Axios.post('/ratings/new',{
+      rating,
+      url
+    })
   }
 
   componentDidMount = async () => {
@@ -30,15 +42,17 @@ class RatingsContainer extends Component {
     return (
       <div>
         <h1>Rate My Cat</h1>
-         <img class="random-image" src={this.state.url}></img>
+         <img className="random-image" src={this.state.url}></img>
          <br></br>
-           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(1)}></img>
-           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(2)}></img>
-           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(3)}></img>
-           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(4)}></img>
-           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(5)}></img>
+           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(1)}></img>
+           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(2)}></img>
+           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(3)}></img>
+           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(4)}></img>
+           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(5)}></img>
+        <form onSubmit={this.handleSubmit}>
+         <button className="" type="submit">Submit</button>
+        </form>
       </div>
-
     )
   }
 }
