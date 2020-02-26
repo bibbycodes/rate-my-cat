@@ -9,7 +9,7 @@ class RatingsContainer extends Component {
     }
   }
 
-  handleRequest = async () => {
+  handleImage = async () => {
     let response = await Axios.get('/cats/random')
     let data = response.data[0]
     let url = data.url
@@ -17,13 +17,21 @@ class RatingsContainer extends Component {
   }
 
   componentDidMount = async () => {
-    await this.handleRequest()
+    await this.handleImage()
   }
 
   render () {
     return (
       <div>
-         <img src={this.state.url}></img>
+        <h1>Rate My Cat</h1>
+         <img class="random-image" src={this.state.url}></img>
+         <table>
+           <th>1</th>
+           <th>2</th>
+           <th>3</th>
+           <th>4</th>
+           <th>5</th>
+         </table>
       </div>
 
     )
