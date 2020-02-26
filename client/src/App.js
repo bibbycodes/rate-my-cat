@@ -1,5 +1,5 @@
 import React from 'react';
-import Template from './Components/Component'
+import RatingsContainer from './Components/RatingsContainer'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Client</h1>
-        <Template/>
+        <RatingsContainer/>
       </div>
     );
   }
