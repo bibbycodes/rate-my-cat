@@ -12,7 +12,8 @@ class Template extends React.Component {
 
   handleRequest = async () => {
     let response = await Axios.get('/home')
-    this.setState({response : response.data})
+    console.log(response)
+    this.setState({response : response.data.message})
   }
 
   componentDidMount() {
