@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Axios from 'axios';
+// import star from '../../public/star.png';
 
 class RatingsContainer extends Component {
   constructor(props) {
@@ -16,6 +17,11 @@ class RatingsContainer extends Component {
     this.setState({url})
   }
 
+  handleRating = (rating) => {
+    // rating.preventDefault()
+    console.log(rating)
+  }
+
   componentDidMount = async () => {
     await this.handleImage()
   }
@@ -25,13 +31,12 @@ class RatingsContainer extends Component {
       <div>
         <h1>Rate My Cat</h1>
          <img class="random-image" src={this.state.url}></img>
-         <table>
-           <th>1</th>
-           <th>2</th>
-           <th>3</th>
-           <th>4</th>
-           <th>5</th>
-         </table>
+         <br></br>
+           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(1)}></img>
+           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(2)}></img>
+           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(3)}></img>
+           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(4)}></img>
+           <img src={`${window.location.origin}/star.png`} class="star" onClick={(rating) => this.handleRating(5)}></img>
       </div>
 
     )

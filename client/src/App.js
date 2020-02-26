@@ -1,5 +1,6 @@
 import React from 'react';
 import RatingsContainer from './Components/RatingsContainer'
+import '../src/style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Client</h1>
         <RatingsContainer/>
       </div>
     );

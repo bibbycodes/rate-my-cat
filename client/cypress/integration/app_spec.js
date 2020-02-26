@@ -5,6 +5,6 @@ import App from '../../src/App'
 describe('App', () => {
   it('Displays the Template Header', () => {
     cy.mount(<App/>)
-    cy.contains('Client')
+    cy.contains('Rate My Cat')
   })
 })
