@@ -21,7 +21,6 @@ class RatingsContainer extends Component {
   handleRating = (rating) => {
     // rating.preventDefault()
     this.setState({rating})
-    console.log(this.state)
   }
 
   handleSubmit = async () => {
@@ -44,11 +43,12 @@ class RatingsContainer extends Component {
         <h1>Rate My Cat</h1>
          <img className="random-image" src={this.state.url}></img>
          <br></br>
-           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(1)}></img>
-           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(2)}></img>
-           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(3)}></img>
-           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(4)}></img>
-           <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(5)}></img>
+          <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(1)}></img>
+          <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(2)}></img>
+          <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(3)}></img>
+          <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(4)}></img>
+          <img src={`${window.location.origin}/star.png`} className="star" onClick={(rating) => this.handleRating(5)}></img>
+          <p>{this.state.rating}</p>
         <form onSubmit={this.handleSubmit}>
          <button className="" type="submit">Submit</button>
         </form>
