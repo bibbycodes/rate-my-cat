@@ -37,7 +37,7 @@ CREATE TABLE ratings (
 );
 ```
 
-make sure you have a `.env` file in the root directory with the following configuration:
+Make sure you have a `.env` file in the root directory with the following configuration:
 ```
 API_KEY=<YOUR_API_KEY>
 NODE_ENV=development
