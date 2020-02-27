@@ -5,6 +5,7 @@
 <div align="center">
 
 [Usage ](#usage) |
+[Planning](#planning) |
 [CI/CD ](#CI/CD) |
 [Tests ](#Tests) |
 [Extending](#extending)
@@ -44,6 +45,31 @@ NODE_ENV=development
 DB_NAME=cats
 DB_USER_LOCAL=<YOUR_POSTGRES_USERNAME>
 ```
+
+# Planning
+Before I started implementing the solution I spent some time writing user stories and planning:
+
+```
+As a cat enthusiast
+So I can pass the time
+I want to see a picture of a random cat
+
+As a user
+So I can share my opinion
+I would like to rate a cat image
+
+As a user
+So I can keep looking at cats
+I would like to see a different cat image
+
+
+As a cat person
+So I can obsess over cats
+I want to see the highest-rated cats
+```
+
+I then broke the user stories into tasks with acceptance criteria. The details of which can be found in <a href="https://trello.com/b/B6mmLRAm/rate-my-cat">Trello Board</a>
+
 
 # Tests
 
