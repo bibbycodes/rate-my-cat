@@ -12,6 +12,11 @@ const Rating = require('./models/Rating')
 const API_KEY = process.env.API_KEY
 const base_url = "https://api.thecatapi.com/v1"
 
+if (process.env.NODE_ENV == 'development') {
+  app.use('/', express.static(path.join(__dirname, 'frontend/public')))
+} else if (process.env.NODE_ENV == 'production') {
+  app.use('/', express.static(path.join(__dirname, 'frontend/build')))
+}
 
 app.use(cors())
 app.use(bodyParser.json())
