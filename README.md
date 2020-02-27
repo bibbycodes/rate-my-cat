@@ -63,7 +63,7 @@ So I can keep looking at cats
 I would like to see a different cat image
 
 As a cat person
-So I can obsess over cats
+So I can see the cutest cats
 I want to see the highest-rated cats
 ```
 
