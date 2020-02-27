@@ -14,7 +14,6 @@ const base_url = "https://api.thecatapi.com/v1"
 
 app.use(cors())
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 app.get('/', (req, res) => {
   try {
