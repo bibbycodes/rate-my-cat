@@ -20,4 +20,11 @@ describe('Rating', () => {
     let entry = result.rows[0]
     assert.equal(entry.rating, 4)
   })
+
+  it('adds a ratings to the db', async () => {
+    let rating = new Rating('cdn.catimage.com', 4)
+    let result = await rating.add()
+    assert.equal(4, result.rating)
+    assert.equal('cdn.catimage.com', result.url)
+  })
 })

@@ -39,7 +39,6 @@ class DbConnection {
   async query(query) {
     try {
       await this.start()
-      console.log(this.uri)
       let result =  await this.client.query(query)
       await this.close()
       return result
