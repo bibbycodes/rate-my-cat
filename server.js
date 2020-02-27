@@ -7,12 +7,11 @@ const cors = require('cors');
 const path = require('path')
 const axios = require('axios')
 const DbConn = require('./models/DbConn')
+const Rating = require('./models/Rating')
 
 const API_KEY = process.env.API_KEY
 const base_url = "https://api.thecatapi.com/v1"
-const options = {
-  headers: {"x-api-key" : API_KEY}
-}
+
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -37,7 +36,11 @@ app.get('/ratings/all', async (req, res) => {
 })
 
 app.post('/ratings/new', async (req, res) => {
-  console.log("rating")
+  console.log(req.body)
+  rating = new Rating(req.body.url, req.body.rating)
+  result = await rating.add()
+  console.log(result)
+  res.status(200).json(result)
 })
 
 app.listen(PORT, () => {
