@@ -38,7 +38,6 @@ app.get('/ratings/all', async (req, res) => {
 
 app.post('/ratings/new', async (req, res) => {
   console.log("rating")
-  console.log(req.body)
 })
 
 app.listen(PORT, () => {
