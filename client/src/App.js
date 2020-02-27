@@ -1,5 +1,6 @@
 import React from 'react';
 import RatingsContainer from './Components/RatingsContainer'
+import LeaderBoard from './Components/Leaderboard'
 import '../src/style.css';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <RatingsContainer/>
+        <LeaderBoard/>
       </div>
     );
   }

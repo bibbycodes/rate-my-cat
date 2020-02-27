@@ -27,4 +27,9 @@ describe('Rating', () => {
     assert.equal(4, result.rating)
     assert.equal('cdn.catimage.com', result.url)
   })
+
+  it('retrieves all ratings', async () => {
+    let result = await Rating.all()
+    assert.equal(result.length, 3)
+  })
 })

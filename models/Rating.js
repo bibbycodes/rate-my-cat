@@ -12,6 +12,12 @@ class Rating {
     return result
   }
 
+  static async all() {
+    let db = new DbConn()
+    let results = await db.query('SELECT * FROM RATINGS ORDER BY rating desc')
+    return results.rows
+  }
+
   async add() {
     let db = new DbConn()
     let result = await db.query(

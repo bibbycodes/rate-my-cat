@@ -48,14 +48,14 @@ app.get('/cats/random', async (req, res) => {
 })
 
 app.get('/ratings/all', async (req, res) => {
-  results = await DbConn.query('SELECT * FROM RATINGS')
+  db = new DbConn()
+  result = await Rating.all()
+  res.json(result)
 })
 
 app.post('/ratings/new', async (req, res) => {
-  console.log(req.body)
   rating = new Rating(req.body.url, req.body.rating)
   result = await rating.add()
-  console.log(result)
   res.status(200).json(result)
 })
 

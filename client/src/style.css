@@ -9,3 +9,13 @@
   min-width: 300px;
   min-height: 300px;
 }
+
+.leaderboard-image {
+  margin-left: 4px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.leaderboard {
+  margin: 4px;
+}
