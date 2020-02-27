@@ -12,15 +12,21 @@ const Rating = require('./models/Rating')
 const API_KEY = process.env.API_KEY
 const base_url = "https://api.thecatapi.com/v1"
 
-if (process.env.NODE_ENV == 'development') {
-  app.use('/', express.static(path.join(__dirname, 'frontend/public')))
-} else if (process.env.NODE_ENV == 'production') {
-  app.use('/', express.static(path.join(__dirname, 'frontend/build')))
-}
-
 app.use(cors())
 app.use(bodyParser.json())
-// app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+
+app.get('/', (req, res) => {
+  try {
+    if (process.env.NODE_ENV == 'development') {
+      res.sendFile(path.join(__dirname+'/client/public/index.html'))
+    } else if (process.env.NODE_ENV == 'production') {
+      res.sendFile(path.join(__dirname+'/client/build/index.html'))
+    }
+  } catch (err) {
+    console.log(err)
+  }
+})
 
 app.get('/home', (req, res) => {
   res.json({message : 'Express Template'})
