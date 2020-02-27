@@ -63,8 +63,8 @@ So I can keep looking at cats
 I would like to see a different cat image
 
 As a cat person
-So I can see the cutest cats
-I want to see the highest-rated cats
+So I can look at the cutest cats
+I want to view the leaderboard
 ```
 
 I then broke the user stories into tasks with acceptance criteria. The details of which can be found in <a href="https://trello.com/b/B6mmLRAm/rate-my-cat">Trello Board</a>
