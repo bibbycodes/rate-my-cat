@@ -64,7 +64,7 @@ To run the tests simply enter `npm run test` into the console. This will provide
   5 passing (2s)
 ```
 
-#### CI/CD
+# CI/CD
 I used Travis CI for continuous integration. This meant that I was confident that all tests were passing and that branches were safe to merge.
 The app is then deployed automatically to Heroku if tests pass on the master branch.
 
