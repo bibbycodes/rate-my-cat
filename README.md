@@ -10,7 +10,7 @@
 </div>
 <img src="https://travis-ci.com/bibbycodes/rate-my-cat.svg?branch=master">
 
-<a href="https://rate-my-cat.herokuapp.com/">Click here to use the app<a>
+<h3><a href="https://rate-my-cat.herokuapp.com/">Click here to use the app<a></h3>
   
 # Usage
 Clone this repo.
