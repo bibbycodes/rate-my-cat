@@ -15,6 +15,12 @@ const base_url = "https://api.thecatapi.com/v1"
 app.use(cors())
 app.use(bodyParser.json())
 
+if (process.env.NODE_ENV == 'development') {
+  app.use('/', express.static(path.join(__dirname, 'client/public')))
+} else if (process.env.NODE_ENV == 'production') {
+  app.use('/', express.static(path.join(__dirname, 'client/build')))
+}
+
 app.get('/', (req, res) => {
   try {
     if (process.env.NODE_ENV == 'development') {
