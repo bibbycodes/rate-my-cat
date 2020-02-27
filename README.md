@@ -1,4 +1,6 @@
-<h1 align=center>Robert Griffith - Rate My Cat - An app where you can rate random cat images from 0 - 5</h1>
+<h1 align=center>Robert Griffith - ClearBank Solution</h1>
+
+<h2 align=center>An app where you can rate random cat images from 0 - 5</h2>
 
 <div align="center">
 
